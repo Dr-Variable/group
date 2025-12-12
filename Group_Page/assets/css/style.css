@@ -1,0 +1,127 @@
+
+:root{
+  --bg:#0b0f14;
+  --card:#071015;
+  --muted:#9aa5b1;
+  --accent1:#5efcff;
+  --accent2:#8b5cf6;
+  --accent3:#ff4d6d;
+  --text:#e6f7ff;
+  --glass: rgba(255,255,255,0.04);
+}
+[data-theme="light"]{
+  --bg:#f6f8fb;
+  --card:#ffffff;
+  --muted:#556070;
+  --accent1:#0066ff;
+  --accent2:#6b21a8;
+  --accent3:#b91c1c;
+  --text:#0b1220;
+  --glass: rgba(0,0,0,0.04);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;}
+body{
+  margin:0;
+  font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: radial-gradient(1200px 400px at 10% 10%, rgba(142,86,255,0.06), transparent),
+              radial-gradient(1000px 300px at 90% 90%, rgba(94,252,255,0.03), transparent),
+              var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+}
+
+/* Navbar */
+.nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 28px;
+  gap:16px;
+  position:sticky;
+  top:0;
+  backdrop-filter: blur(6px);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  border-bottom:1px solid rgba(255,255,255,0.03);
+  z-index:50;
+}
+.brand{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+.logo{
+  width:48px;height:48px;border-radius:10px;
+  background: linear-gradient(135deg,var(--accent1),var(--accent2));
+  display:flex;align-items:center;justify-content:center;font-weight:700;color:#041018;
+  box-shadow:0 6px 20px rgba(0,0,0,0.5);
+}
+.navlinks{display:flex;gap:14px;align-items:center;}
+.navlinks a{
+  color:var(--muted); text-decoration:none; padding:8px 10px; border-radius:8px;
+  font-weight:600; font-size:15px;
+}
+.navlinks a:hover{ color:var(--text); background:var(--glass);}
+
+/* Hero */
+.hero{
+  max-width:1200px;margin:28px auto;padding:24px;
+}
+.hero-top{
+  position:relative;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 20px 40px rgba(0,0,0,0.6);
+  border:1px solid rgba(255,255,255,0.03);
+}
+.hero-bg{
+  width:100%;height:360px; display:block;
+  object-fit:cover;
+  filter:contrast(1.05) saturate(1.05);
+}
+.hero-content{
+  position:absolute; left:28px; bottom:28px; color:var(--text);
+  text-shadow: 0 6px 30px rgba(0,0,0,0.6);
+}
+.h-title{ font-size:34px; margin:0 0 6px 0; letter-spacing:0.4px; }
+.h-sub{ margin:0 0 12px 0; color:var(--muted); max-width:760px; }
+
+/* Research & Events */
+.grid{ display:grid; grid-template-columns: 1fr 360px; gap:22px; margin-top:22px;}
+.card{ background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent); padding:18px; border-radius:12px; border:1px solid rgba(255,255,255,0.03);}
+.section-title{ display:flex; align-items:center; gap:10px; margin-bottom:12px;}
+.section-title h3{ margin:0; font-size:18px;}
+.list{ padding-left:18px; margin:0; color:var(--muted);}
+
+/* Event highlight */
+.event{ display:flex; gap:12px; margin-bottom:12px; align-items:flex-start;}
+.event .dot{ width:48px;height:48px;border-radius:10px; background:linear-gradient(135deg,var(--accent2),var(--accent1)); display:flex;align-items:center;justify-content:center; font-weight:700; color:#041018; }
+.event .info{ flex:1;}
+.event .info h4{ margin:0 0 6px 0;}
+.event .info p{ margin:0; color:var(--muted); font-size:14px;}
+
+/* Footer */
+.footer{ max-width:1200px; margin:28px auto;color:var(--muted); font-size:14px; padding:18px; display:flex; justify-content:space-between; align-items:center;}
+
+/* Responsive */
+@media (max-width:900px){
+  .grid{ grid-template-columns:1fr; }
+  .navlinks{ display:none; }
+  .hero-bg{ height:260px; }
+}
+
+/* Neon accents for buttons and links */
+.btn{
+  display:inline-flex; gap:10px; align-items:center; padding:10px 14px; border-radius:10px;
+  background: linear-gradient(90deg,var(--accent1),var(--accent2)); color:#041018; font-weight:700; text-decoration:none;
+  box-shadow: 0 8px 30px rgba(139,92,246,0.12), 0 0 30px rgba(94,252,255,0.03) inset;
+}
+.theme-toggle{ padding:8px; border-radius:10px; background:transparent; border:1px solid rgba(255,255,255,0.03); color:var(--muted); cursor:pointer;}
+.small{ font-size:13px; padding:8px 10px;}
+
+/* subtle glass cards inside */
+.card-grid{ display:grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap:12px;}
+.card-compact{ padding:12px; border-radius:10px; background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent); border:1px solid rgba(255,255,255,0.02); }
