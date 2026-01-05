@@ -10,18 +10,15 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const themeToggle = document.getElementById("themeToggle");
-  const body = document.body;
-
-  body.setAttribute("data-theme", "light");
-  localStorage.setItem("theme", "light");
+  const root = document.documentElement;
 
   themeToggle?.addEventListener("click", () => {
 
-    const currentTheme = body.getAttribute("data-theme");
-    const Theme = currentTheme === "light" ? "dark" : "light";
+    currentTheme = root.getAttribute("data-theme");
+    nexttheme = ( currentTheme === "light" ? "dark" : "light" ); 
 
-    body.setAttribute("data-theme", Theme);
-    localStorage.setItem("theme", Theme);
+    root.setAttribute("data-theme", nexttheme);
+    localStorage.setItem("theme", nexttheme);
   });
 
 });

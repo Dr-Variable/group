@@ -1,5 +1,5 @@
 
-[data-theme="dark"]{
+html[data-theme="dark"]{
   --bg:#0b0f14;
   --text:#e6f7ff;
   --linkc:#94bdec;
@@ -14,7 +14,7 @@
   --twitter: url("../img/logos/twitter-x_white.svg");
   --personal_web: url("../img/logos/globe_white.svg");
 }
-[data-theme="light"]{
+html[data-theme="light"]{
   --bg:#f6f8fb;
   --text:#0b1220;
   --linkc:#0e407a;
@@ -39,6 +39,10 @@ body{
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   line-height:1.5;
+}
+
+.no-transition * {
+  transition: none !important;
 }
 
 /* ===== Base layout ===== */
